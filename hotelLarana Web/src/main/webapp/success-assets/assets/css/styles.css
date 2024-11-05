@@ -1,0 +1,7 @@
+body {
+	background-image: url('../../../imgs/background.png');
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

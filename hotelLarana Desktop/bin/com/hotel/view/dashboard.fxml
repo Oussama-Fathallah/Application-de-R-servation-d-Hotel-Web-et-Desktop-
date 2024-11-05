@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane centerShape="false" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.DashboardController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="777.0" layoutX="247.0" opacity="0.79" pickOnBounds="true">
+         <image>
+            <Image url="@hotel2.jpeg" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="overviewform" layoutX="260.0" layoutY="11.0" prefHeight="694.0" prefWidth="755.0" visible="false">
+         <children>
+            <Pane layoutX="56.0" layoutY="85.0" prefHeight="598.0" prefWidth="643.0" style="-fx-background-color: e0d7b5;">
+               <children>
+                  <ImageView fitHeight="99.0" fitWidth="190.0" layoutX="120.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@val.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="165.0" layoutY="54.0" prefHeight="21.0" prefWidth="76.0" text="Available">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="99.0" fitWidth="149.0" layoutX="369.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@image1.png" />
+                     </image>
+                  </ImageView>
+                  <Label layoutX="415.0" layoutY="54.0" prefHeight="21.0" prefWidth="76.0" text="Booked">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="120.0" layoutY="83.0" prefHeight="3.0" prefWidth="150.0" />
+                  <Separator layoutX="369.0" layoutY="83.0" prefHeight="3.0" prefWidth="150.0" />
+                  <Label fx:id="Available" layoutX="184.0" layoutY="103.0" prefHeight="21.0" prefWidth="30.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="Booked" layoutX="432.0" layoutY="103.0" prefHeight="21.0" prefWidth="30.0">
+                     <font>
+                        <Font name="System Bold" size="15.0" />
+                     </font>
+                  </Label>
+                  <BarChart fx:id="barChart" layoutX="94.0" layoutY="238.0" prefHeight="346.0" prefWidth="478.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </BarChart>
+                  <Label layoutX="285.0" layoutY="14.0" prefHeight="21.0" prefWidth="76.0" text="Rooms">
+                     <font>
+                        <Font name="Arial" size="17.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <Label layoutX="279.0" layoutY="14.0" text="Hotel overview" textFill="#58490f">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9263157844543457" green="0.8782845735549927" blue="0.8782845735549927" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="-9.0" prefHeight="720.0" prefWidth="256.0" style="-fx-background-color: #58490F;">
+         <children>
+            <ImageView fitHeight="300.0" fitWidth="256.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@dashboardLogo.png" />
+               </image>
+            </ImageView>
+            <Separator prefWidth="200.0" />
+            <Button fx:id="overviewbtn" mnemonicParsing="false" onAction="#toggleOverviewForm" prefHeight="66.0" prefWidth="256.0" style="-fx-background-color: #58490F;" text="Overview" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin>
+            </Button>
+            <Button fx:id="reservationbtn" layoutX="10.0" layoutY="266.0" mnemonicParsing="false" onAction="#toggleReservationForm" prefHeight="68.0" prefWidth="256.0" style="-fx-background-color: #58490F;" text="Reservations" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+            </Button>
+            <Button fx:id="usersbtn" layoutX="10.0" layoutY="306.0" mnemonicParsing="false" onAction="#toggleUsersForm" prefHeight="70.0" prefWidth="256.0" style="-fx-background-color: #58490F;" text="Users" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+            </Button>
+            <Button fx:id="employeesbtn" layoutX="10.0" layoutY="346.0" mnemonicParsing="false" onAction="#toggleEmployeesForm" prefHeight="69.0" prefWidth="256.0" style="-fx-background-color: #58490F;" text="Employees" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+            </Button>
+            <Button fx:id="customersbtn" mnemonicParsing="false" onAction="#togglecustomersForm" prefHeight="70.0" prefWidth="256.0" style="-fx-background-color: #58490F;" text="Customers" textFill="WHITE">
+               <font>
+                  <Font name="Montserrat SemiBold" size="18.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <effect>
+                  <Blend />
+               </effect>
+            </Button>
+            <Button mnemonicParsing="false" prefHeight="154.0" prefWidth="256.0" style="-fx-background-color: #58490F;" text="Sign out" textFill="WHITE">
+               <graphic>
+                  <HBox fx:id="signout" alignment="CENTER" onMouseClicked="#signout" prefHeight="35.0" prefWidth="39.0">
+                     <children>
+                        <SVGPath content="M 1.246094 18.722656 L 8.042969 25.546875 C 8.210938 25.71875 8.40625 25.847656 8.628906 25.941406 C 8.847656 26.03125 9.078125 26.078125 9.316406 26.078125 C 9.558594 26.078125 9.785156 26.03125 10.007812 25.941406 C 10.230469 25.847656 10.421875 25.71875 10.59375 25.546875 C 10.761719 25.378906 10.890625 25.183594 10.984375 24.960938 C 11.074219 24.738281 11.121094 24.507812 11.121094 24.269531 C 11.121094 24.027344 11.074219 23.796875 10.984375 23.574219 C 10.890625 23.355469 10.761719 23.160156 10.59375 22.988281 L 6.871094 19.253906 L 26.554688 19.253906 C 26.796875 19.253906 27.027344 19.207031 27.246094 19.117188 C 27.46875 19.023438 27.664062 18.894531 27.832031 18.722656 C 28 18.554688 28.128906 18.359375 28.222656 18.136719 C 28.3125 17.914062 28.359375 17.683594 28.359375 17.445312 C 28.359375 17.207031 28.3125 16.972656 28.222656 16.753906 C 28.128906 16.53125 28 16.335938 27.832031 16.164062 C 27.664062 15.996094 27.46875 15.867188 27.246094 15.773438 C 27.027344 15.683594 26.796875 15.636719 26.554688 15.636719 L 6.871094 15.636719 L 10.59375 11.902344 C 10.761719 11.730469 10.890625 11.535156 10.984375 11.3125 C 11.074219 11.09375 11.121094 10.863281 11.121094 10.621094 C 11.121094 10.382812 11.074219 10.152344 10.984375 9.929688 C 10.890625 9.707031 10.761719 9.511719 10.59375 9.34375 C 10.421875 9.171875 10.230469 9.042969 10.007812 8.949219 C 9.785156 8.859375 9.558594 8.8125 9.316406 8.8125 C 9.078125 8.8125 8.847656 8.859375 8.628906 8.949219 C 8.40625 9.042969 8.210938 9.171875 8.042969 9.34375 L 1.246094 16.164062 C 1.074219 16.335938 0.945312 16.53125 0.851562 16.753906 C 0.761719 16.972656 0.714844 17.207031 0.714844 17.445312 C 0.714844 17.683594 0.761719 17.914062 0.851562 18.136719 C 0.945312 18.359375 1.074219 18.554688 1.246094 18.722656 Z M 1.246094 18.722656 " fill="WHITE">
+                           <HBox.margin>
+                              <Insets right="-15.0" />
+                           </HBox.margin>
+                        </SVGPath>
+                        <SVGPath content="M 14.539062 7.191406 C 14.777344 7.191406 15.007812 7.148438 15.226562 7.054688 C 15.449219 6.964844 15.644531 6.832031 15.8125 6.664062 C 15.980469 6.492188 16.113281 6.296875 16.203125 6.074219 C 16.292969 5.855469 16.339844 5.625 16.339844 5.382812 L 16.339844 3.574219 L 31.964844 3.574219 L 31.964844 31.316406 L 16.339844 31.316406 L 16.339844 29.507812 C 16.339844 29.265625 16.292969 29.035156 16.203125 28.816406 C 16.113281 28.59375 15.980469 28.398438 15.8125 28.226562 C 15.644531 28.058594 15.449219 27.925781 15.226562 27.835938 C 15.007812 27.742188 14.777344 27.699219 14.539062 27.699219 C 14.296875 27.699219 14.070312 27.742188 13.847656 27.835938 C 13.628906 27.925781 13.433594 28.058594 13.261719 28.226562 C 13.09375 28.398438 12.964844 28.59375 12.871094 28.816406 C 12.78125 29.035156 12.734375 29.265625 12.734375 29.507812 L 12.734375 31.917969 C 12.734375 32.320312 12.8125 32.703125 12.964844 33.074219 C 13.117188 33.441406 13.332031 33.769531 13.613281 34.050781 C 13.898438 34.335938 14.222656 34.550781 14.589844 34.707031 C 14.957031 34.859375 15.339844 34.933594 15.738281 34.933594 L 32.566406 34.933594 C 32.964844 34.933594 33.347656 34.859375 33.714844 34.707031 C 34.082031 34.550781 34.410156 34.335938 34.691406 34.050781 C 34.972656 33.769531 35.1875 33.441406 35.34375 33.074219 C 35.496094 32.703125 35.570312 32.320312 35.570312 31.917969 L 35.570312 2.972656 C 35.570312 2.570312 35.496094 2.1875 35.34375 1.816406 C 35.1875 1.449219 34.972656 1.121094 34.691406 0.839844 C 34.410156 0.554688 34.082031 0.339844 33.714844 0.183594 C 33.347656 0.03125 32.964844 -0.0429688 32.566406 -0.0429688 L 15.738281 -0.0429688 C 15.339844 -0.0429688 14.957031 0.03125 14.589844 0.183594 C 14.222656 0.339844 13.898438 0.554688 13.613281 0.839844 C 13.332031 1.121094 13.117188 1.449219 12.964844 1.816406 C 12.8125 2.1875 12.734375 2.570312 12.734375 2.972656 L 12.734375 5.382812 C 12.734375 5.625 12.78125 5.855469 12.871094 6.074219 C 12.964844 6.296875 13.09375 6.492188 13.261719 6.664062 C 13.433594 6.832031 13.628906 6.964844 13.847656 7.054688 C 14.070312 7.148438 14.296875 7.191406 14.539062 7.191406 Z M 14.539062 7.191406 " fill="WHITE">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </SVGPath>
+                     </children>
+                     <padding>
+                        <Insets right="15.0" />
+                     </padding>
+                  </HBox>
+               </graphic>
+               <font>
+                  <Font name="Montserrat SemiBold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets top="80.0" />
+               </padding>
+            </Button>
+         </children>
+      </VBox>
+      <Label fx:id="time" layoutX="917.0" layoutY="22.0" prefHeight="20.0" prefWidth="98.0" textFill="#58490f">
+         <font>
+            <Font size="8.0" />
+         </font>
+      </Label>
+      <AnchorPane fx:id="reservationform" layoutX="260.0" layoutY="11.0" prefHeight="694.0" prefWidth="755.0" visible="false">
+         <children>
+            <Label layoutX="288.0" layoutY="28.0" text="Hotel Reservation" textFill="#58490f">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.8105263113975525" green="0.7474853992462158" blue="0.7474853992462158" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Pane layoutX="62.0" layoutY="77.0" opacity="0.98" prefHeight="614.0" prefWidth="643.0" style="-fx-background-color: e0d7b5;">
+               <children>
+                  <AnchorPane fx:id="availabilityform" layoutX="18.0" layoutY="52.0" prefHeight="546.0" prefWidth="607.0" visible="false">
+                     <children>
+                        <Label layoutX="81.0" layoutY="47.0" text="Room Number" />
+                        <Label layoutX="81.0" layoutY="162.0" text="Availability" />
+                        <ChoiceBox fx:id="RoomAvailability" layoutX="389.0" layoutY="158.0" prefWidth="150.0" />
+                        <TableView fx:id="Roomtableview" layoutX="27.0" layoutY="335.0" prefHeight="198.0" prefWidth="542.0">
+                          <columns>
+                            <TableColumn fx:id="RoomNumberColumn" prefWidth="184.0" text="RoomNumber" />
+                            <TableColumn fx:id="roomtypeColumn" prefWidth="184.79998779296875" text="Room_Type" />
+                              <TableColumn fx:id="roomAvailabilityColumn" prefWidth="172.80002441406248" text="Room_Availability" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="81.0" layoutY="102.0" text="Room Type" />
+                        <TextField fx:id="Roomumber" layoutX="390.0" layoutY="43.0" />
+                        <TextField fx:id="Roomtype" layoutX="391.0" layoutY="98.0" />
+                        <Button layoutX="190.0" layoutY="260.0" mnemonicParsing="false" onAction="#AddRoom" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Add" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <Button layoutX="288.0" layoutY="261.0" mnemonicParsing="false" onAction="#DeleteRoom" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Delete" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <Button layoutX="389.0" layoutY="261.0" mnemonicParsing="false" onAction="#UpdateRoom" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Update" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="548.0" layoutY="312.0" onMouseClicked="#refreshTextfields" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images__1_-removebg-preview.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="manageReservationform" layoutX="18.0" layoutY="38.0" prefHeight="546.0" prefWidth="607.0" visible="false">
+                     <children>
+                        <Label layoutX="82.0" layoutY="52.0" text="Last Name" />
+                        <Label layoutX="84.0" layoutY="157.0" text="Check in Date" />
+                        <Button layoutX="179.0" layoutY="316.0" mnemonicParsing="false" onAction="#createReservation" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Create" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <TableView fx:id="managereservationtable" layoutX="8.0" layoutY="368.0" prefHeight="171.0" prefWidth="589.0">
+                           <columns>
+                              <TableColumn fx:id="ReservationidColumn" prefWidth="64.800048828125" text="ID" />
+                              <TableColumn fx:id="firstnameColumn" prefWidth="88.79998779296875" text="FirstName" />
+                              <TableColumn fx:id="lastnameColumn" prefWidth="86.39996337890625" text="LastName" />
+                              <TableColumn fx:id="EmailColumn" prefWidth="134.4000244140625" text="Email" />
+                              <TableColumn fx:id="RoomnumberColumn" prefWidth="87.20013427734375" text="RoomNumber" />
+                              <TableColumn fx:id="roomCheckinColumn" prefWidth="116.79998779296875" text="CheckInDate " />
+                              <TableColumn fx:id="roomCheckoutColumn" prefWidth="117.5999755859375" text="CheckOutDate " />
+                              <TableColumn fx:id="NumberOFguestColumn" prefWidth="102.4000244140625" text="NumberOFGuest" />
+                              <TableColumn fx:id="ROOMTYPEColumn" prefWidth="98.4000244140625" text="Room Type" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="83.0" layoutY="123.0" text="Room Number" />
+                        <Label layoutX="84.0" layoutY="192.0" text="Check out Date" />
+                        <TextField fx:id="reservecustomerlastname" layoutX="359.0" layoutY="48.0" />
+                        <TextField fx:id="reserveroomnumber" layoutX="359.0" layoutY="119.0" />
+                        <DatePicker fx:id="reservecheckin" layoutX="360.0" layoutY="153.0" />
+                        <DatePicker fx:id="reservecheckout" layoutX="360.0" layoutY="188.0" />
+                        <Button layoutX="282.0" layoutY="316.0" mnemonicParsing="false" onAction="#deleteReservation" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Delete" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font></Button>
+                        <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="576.0" layoutY="346.0" onMouseClicked="#refreshTextfields" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images__1_-removebg-preview.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                        <Button layoutX="387.0" layoutY="316.0" mnemonicParsing="false" onAction="#updatereservation" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Update" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <TextField fx:id="reservecustomerfirstname" layoutX="359.0" layoutY="14.0" />
+                        <TextField fx:id="reservecustomeremail" layoutX="359.0" layoutY="83.0" />
+                        <Label layoutX="83.0" layoutY="89.0" text="Email" />
+                        <Label layoutX="81.0" layoutY="18.0" text="First Name" />
+                        <TextField fx:id="NumberGuest" layoutX="361.0" layoutY="225.0" />
+                        <TextField fx:id="ROOMTYPE" layoutX="362.0" layoutY="263.0" />
+                        <Label layoutX="84.0" layoutY="229.0" text="NumberOFGuest" />
+                        <Label layoutX="85.0" layoutY="267.0" text="Room Type" />
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="manageresbtn" layoutX="147.0" layoutY="6.0" mnemonicParsing="false" onAction="#manageReservation" prefHeight="26.0" prefWidth="132.0" style="-fx-background-color: #58490f;" text="manage Reservation" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Pane>
+            <Button fx:id="availablroombtn" layoutX="76.0" layoutY="84.0" mnemonicParsing="false" onAction="#manageAvailabilityRooms" prefHeight="26.0" prefWidth="119.0" style="-fx-background-color: #ffffff;" text="Availability Room" textFill="#58490f">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="usersform" layoutX="260.0" layoutY="14.0" prefHeight="694.0" prefWidth="755.0" visible="false">
+         <children>
+            <Pane layoutX="21.0" layoutY="68.0" opacity="0.95" prefHeight="606.0" prefWidth="712.0" style="-fx-background-color: e0d7b5;">
+               <children>
+                  <TableView fx:id="userTableView" layoutX="7.0" layoutY="391.0" prefHeight="209.0" prefWidth="700.0">
+                     <columns>
+                        <TableColumn fx:id="userIDColumn" prefWidth="88.79998779296875" text="User_ID" />
+                        <TableColumn fx:id="FirstNameuserColumn" prefWidth="111.20001220703125" text="FirstName" />
+                        <TableColumn fx:id="LastNameuserDColumn" prefWidth="112.00006103515625" text="LastName" />
+                        <TableColumn fx:id="EMAILUSERColumn" prefWidth="160.0" text="Email" />
+                        <TableColumn fx:id="passwordColumn" prefWidth="100.7999267578125" text="Password" />
+                        <TableColumn fx:id="userTypeColumn" prefWidth="123.19989013671875" text="UserType" />
+                     </columns>
+                  </TableView>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="680.0" layoutY="366.0" onMouseClicked="#refreshTextfields" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images__1_-removebg-preview.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <TextField fx:id="userUserName" layoutX="391.0" layoutY="144.0" />
+                  <Label layoutX="133.0" layoutY="111.0" text="LastName" />
+                  <Label layoutX="133.0" layoutY="72.0" text="FirstName" />
+                  <TextField fx:id="userlastname" layoutX="391.0" layoutY="107.0" />
+                  <TextField fx:id="userfirstname" layoutX="391.0" layoutY="68.0" />
+                  <Button layoutX="191.0" layoutY="326.0" mnemonicParsing="false" onAction="#addUser" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Add" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="303.0" layoutY="326.0" mnemonicParsing="false" onAction="#deleteUser" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Delete" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button layoutX="417.0" layoutY="325.0" mnemonicParsing="false" onAction="#updateUser" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Update" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Label layoutX="301.0" layoutY="14.0" text="Hotel Users" textFill="#58490f">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9157894849777222" green="0.8716959357261658" blue="0.8716959357261658" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="153.0" layoutY="224.0" text="Email" />
+            <Label layoutX="153.0" layoutY="268.0" text="Password" />
+            <Label layoutX="153.0" layoutY="310.0" text="Type" />
+            <PasswordField fx:id="userPassword" layoutX="412.0" layoutY="256.0" />
+            <ChoiceBox fx:id="userUserType" layoutX="412.0" layoutY="304.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="employeesform" layoutX="260.0" layoutY="14.0" prefHeight="694.0" prefWidth="755.0" visible="false">
+         <children>
+            <Pane layoutX="47.0" layoutY="66.0" opacity="0.95" prefHeight="614.0" prefWidth="658.0" style="-fx-background-color: e0d7b5;">
+               <children>
+                  <TableView fx:id="employeesTableView" layoutX="28.0" layoutY="396.0" prefHeight="209.0" prefWidth="589.0">
+                     <columns>
+                        <TableColumn fx:id="EmployeeIDColumn" prefWidth="139.20001220703125" text="Employee_ID" />
+                        <TableColumn fx:id="EmployeefirstNameColumn" prefWidth="150.39996337890625" text="First_Name" />
+                        <TableColumn fx:id="EmployeelastNameColumn" prefWidth="158.39996337890625" text="Last_Name" />
+                        <TableColumn fx:id="EmployeepositionColumn" prefWidth="140.0" text="Position" />
+                     </columns>
+                  </TableView>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="596.0" layoutY="372.0" onMouseClicked="#refreshTextfields" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images__1_-removebg-preview.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="46.0" fitWidth="34.0" layoutX="307.0" layoutY="362.0" onMouseClicked="#uploadCSV" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@import.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="28.0" layoutY="363.0" onMouseClicked="#exportCSV" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@export.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <Label layoutX="266.0" layoutY="14.0" text="Hotel Employees" textFill="#58490f">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.8736842274665833" green="0.8283820748329163" blue="0.8283820748329163" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Label layoutX="148.0" layoutY="165.0" text="First Name" />
+            <Label layoutX="148.0" layoutY="219.0" text="Last Name" />
+            <Label layoutX="148.0" layoutY="273.0" text="Position" />
+            <TextField fx:id="employeefirstName" layoutX="430.0" layoutY="161.0" />
+            <TextField fx:id="employeelastName" layoutX="430.0" layoutY="215.0" />
+            <TextField fx:id="employeeposition" layoutX="430.0" layoutY="269.0" />
+            <Button layoutX="222.0" layoutY="378.0" mnemonicParsing="false" onAction="#addEmployee" prefHeight="26.0" prefWidth="76.0" style="-fx-background-color: #58490f;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="323.0" layoutY="377.0" mnemonicParsing="false" onAction="#deleteEmployee" prefHeight="30.0" prefWidth="76.0" style="-fx-background-color: #58490f;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="421.0" layoutY="377.0" mnemonicParsing="false" onAction="#updateEmployee" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="customersform" layoutX="260.0" layoutY="14.0" prefHeight="694.0" prefWidth="755.0" visible="false">
+         <children>
+            <Pane layoutX="64.0" layoutY="74.0" opacity="0.99" prefHeight="606.0" prefWidth="643.0" style="-fx-background-color: e0d7b5;">
+               <children>
+
+                  <TableView fx:id="tableviewCustomer" layoutX="25.0" layoutY="390.0" prefHeight="210.0" prefWidth="598.0">
+                    <columns>
+                      <TableColumn fx:id="CustomidColumn" prefWidth="96.0" text="customerID" />
+                      <TableColumn fx:id="CustomerFNcol" prefWidth="114.4000244140625" text="firstName" />
+                        <TableColumn fx:id="CustomerLNcol" prefWidth="119.20001220703125" text="lastName" />
+                        <TableColumn fx:id="CustomerEMcol" prefWidth="132.0" text="email" />
+                        <TableColumn fx:id="CustomerPHcol" prefWidth="136.79998779296875" text="phone" />
+                    </columns>
+                  </TableView>
+                  <ImageView fitHeight="21.0" fitWidth="26.0" layoutX="602.0" layoutY="368.0" onMouseClicked="#refreshTextfields" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images__1_-removebg-preview.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </children>
+            </Pane>
+            <TextField fx:id="customerfirstname" layoutX="418.0" layoutY="150.0" />
+            <TextField fx:id="customerlastname" layoutX="418.0" layoutY="206.0" />
+            <TextField fx:id="customeremail" layoutX="419.0" layoutY="257.0" />
+            <TextField fx:id="customerphone" layoutX="420.0" layoutY="322.0" />
+            <Label layoutX="154.0" layoutY="154.0" text="First Name" />
+            <Label layoutX="154.0" layoutY="210.0" text="Last Name" />
+            <Label layoutX="154.0" layoutY="261.0" prefHeight="18.0" prefWidth="56.0" text="Email" />
+            <Label layoutX="154.0" layoutY="326.0" text="Phone" />
+            <Label layoutX="275.0" layoutY="23.0" text="Hotel Customers" textFill="#58490f">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <effect>
+                  <DropShadow>
+                     <color>
+                        <Color red="0.9263157844543457" green="0.9057310223579407" blue="0.9057310223579407" />
+                     </color>
+                  </DropShadow>
+               </effect>
+            </Label>
+            <Button layoutX="266.0" layoutY="406.0" mnemonicParsing="false" onAction="#addCustomer" prefHeight="30.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Add" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="370.0" layoutY="406.0" mnemonicParsing="false" onAction="#deleteCustomer" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Delete" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <Button layoutX="474.0" layoutY="406.0" mnemonicParsing="false" onAction="#updateCustomer" prefHeight="26.0" prefWidth="74.0" style="-fx-background-color: #58490f;" text="Update" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
