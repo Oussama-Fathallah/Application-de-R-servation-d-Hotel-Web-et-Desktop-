@@ -1,4 +1,7 @@
 ![image](https://github.com/user-attachments/assets/d3f57ae1-dfd2-4185-a4c4-ba28afd5254e)
+## 🖥️ Web Screens
+
+Voici quelques captures d’écran de l’interface Web de l’application :
 
 ![image](https://github.com/user-attachments/assets/af0ac212-84e9-42a2-acd2-23462a272346)
 
@@ -9,6 +12,10 @@
 ![image](https://github.com/user-attachments/assets/cb4cb68d-449d-42f8-b395-57ba0686ad87)
 
 ![image](https://github.com/user-attachments/assets/7b675eb1-230e-4498-99af-ef7710eff50a)
+
+## 💻 Desktop Screens
+
+Voici des captures d’écran de la version Desktop de l’application :
 
 ![image](https://github.com/user-attachments/assets/b2e0bcc4-091e-4ae5-be72-34e8a999e577)
 
